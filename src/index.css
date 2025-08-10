@@ -1,55 +1,53 @@
-/* Tailwind Directives - Should be at the top */
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import Custom Fonts (if necessary) */
-@import './styles/fonts.css';  /* Only if you have custom fonts */
+/* Fonts */
+@import './styles/fonts.css'; /* if needed */
 
-/* Custom Body Styling with Tailwind */
-body {
-  @apply font-inter m-0;
+/* Global */
+html, body, #root {
+  margin: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
-/* Custom Code Styling */
+body {
+  @apply font-inter;
+}
+
 code {
   font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Custom Media Queries already present */
+/* Scoped HeroSection mobile adjustments */
 @media (max-width: 1200px) {
-  .hero-gradient-box {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    margin-top: 20px !important;
+  .hero-section .hero-gradient-box {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
   }
 
-  section {
-    flex-direction: column !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    gap: 40px !important;
+  .hero-section .service-section {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 40px;
     padding: 0 20px;
   }
 
-  section img {
-    width: 100% !important;
-    height: auto !important;
+  .hero-section .service-section img {
+    width: 100%;
+    height: auto;
     max-width: 414px;
   }
 
-  section div {
-    max-width: 100% !important;
-  }
-
-  .faq-container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  .hero-section .service-section div {
+    max-width: 100%;
   }
 }
-

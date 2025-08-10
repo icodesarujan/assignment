@@ -32,7 +32,7 @@ export default function HeroSection() {
   return (
     <div className="w-full">
       {/* Hero */}
-      <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[700px]">
+      <div className="relative w-full h-[400px] md:h-[560px] lg:h-[700px]">
         <img src={hero} alt="Hero" className="w-full h-full object-cover" />
 
         {/* Hero Text Box */}
@@ -40,28 +40,28 @@ export default function HeroSection() {
           ref={heroBoxRef}
           className={`${
             isMobile
-              ? 'relative w-full max-w-full bg-gradient-to-r from-[#1CBDDD] to-[#4DCA79] px-5 py-6 text-white flex flex-col justify-between'
-              : 'absolute bottom-4 sm:bottom-10 left-4 sm:left-[60px] lg:left-[80px] w-[calc(100%-2rem)] sm:w-[630px] bg-gradient-to-r from-[#1CBDDD] to-[#4DCA79] px-5 py-6 text-white flex flex-col justify-between'
+              ? 'relative w-full max-w-full bg-gradient-to-r from-[#1CBDDD] to-[#4DCA79] px-5 py-6 text-white flex flex-col items-center text-center gap-4'
+              : 'absolute bottom-6 sm:bottom-10 left-4 sm:left-[60px] lg:left-[80px] w-[calc(100%-2rem)] sm:w-[630px] bg-gradient-to-r from-[#1CBDDD] to-[#4DCA79] px-5 py-6 text-white flex flex-col items-start text-left gap-4'
           }`}
-          style={{
-            borderRadius: 0,
-            transition: 'all 0.5s ease-in-out',
-          }}
+          style={{ borderRadius: 0, transition: 'all 0.5s ease-in-out' }}
         >
           <h1
             className="font-inter font-bold tracking-[-0.02em] max-w-full
-            text-[20px] leading-[28px] sm:text-[32px] sm:leading-[40px] lg:text-[48px] lg:leading-[56px]"
+                       text-[20px] leading-[28px]
+                       sm:text-[32px] sm:leading-[40px]
+                       lg:text-[48px] lg:leading-[56px]"
           >
-            We Crush Your Competitors, Goals, And Sales Records - Without The
-            B.S.
+            We Crush Your Competitors, Goals, And Sales Records - Without The B.S.
           </h1>
-          <div className="mt-4 sm:mt-6">
+
+          {/* CTA */}
+          <div className="mt-1 sm:mt-2 md:mt-3 w-full flex justify-center md:justify-start">
             <Button text="GET FREE CONSULTATION" />
           </div>
         </div>
       </div>
 
-      {/* Spacer div: only show when hero box is shifted down (mobile) */}
+      {/* Spacer for mobile */}
       {isMobile && (
         <div
           style={{
@@ -71,7 +71,7 @@ export default function HeroSection() {
         />
       )}
 
-      {/* Sections container */}
+      {/* Sections */}
       <div>
         {/* Web & Mobile App Development */}
         <section
@@ -79,12 +79,12 @@ export default function HeroSection() {
           className="max-w-[1440px] mx-auto mt-[80px] px-4 sm:px-6 md:px-0"
         >
           <div className="flex flex-col md:flex-row items-start text-center md:text-left">
-            {/* Image Container */}
+            {/* Image */}
             <div
-              className="order-1 md:order-1 md:ml-[40px] lg:ml-[188px] 
-                         w-[260px] sm:w-[300px] md:w-[414px] 
+              className="order-1 md:order-1 md:ml-[40px] lg:ml-[188px]
+                         w-[260px] sm:w-[300px] md:w-[414px]
                          mx-auto md:mx-0 flex-shrink-0 self-start
-                         md:-mt-[113.5px]"
+                         lg:-mt-[113.5px]"  /* only overlap on lg+ */
             >
               <img
                 src={image2}
@@ -93,10 +93,10 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Text Container */}
+            {/* Text */}
             <div
-              className="order-2 md:order-2 mt-0 md:mt-0 
-                         md:ml-[40px] lg:ml-[40px] 
+              className="order-2 md:order-2 mt-0 md:mt-0
+                         md:ml-[40px] lg:ml-[40px]
                          max-w-full md:max-w-[460px] lg:max-w-[542px]
                          mr-4 sm:mr-8 md:mr-10 lg:mr-[40px]
                          text-center md:text-left
@@ -135,12 +135,12 @@ export default function HeroSection() {
         {/* Digital Strategy Consulting */}
         <section className="max-w-[1440px] mx-auto mt-[80px] px-4 sm:px-6 md:px-0">
           <div className="flex flex-col md:flex-row items-start text-center md:text-left">
-            {/* Image Container */}
+            {/* Image */}
             <div
-              className="order-1 md:order-2 md:mr-[40px] lg:mr-[188px] 
-                         w-[260px] sm:w-[300px] md:w-[414px] 
+              className="order-1 md:order-2 md:mr-[40px] lg:mr-[188px]
+                         w-[260px] sm:w-[300px] md:w-[414px]
                          mx-auto md:mx-0 flex-shrink-0 self-start
-                         md:-mt-[105px]"
+                         lg:-mt-[105px]"   /* only overlap on lg+ */
             >
               <img
                 src={image}
@@ -149,10 +149,10 @@ export default function HeroSection() {
               />
             </div>
 
-            {/* Text Container */}
+            {/* Text */}
             <div
-              className="order-2 md:order-1 mt-0 md:mt-0 
-                         md:ml-[40px] lg:ml-[188px] max-w-full md:max-w-[460px] lg:max-w-[542px] 
+              className="order-2 md:order-1 mt-0 md:mt-0
+                         md:ml-[40px] lg:ml-[188px] max-w-full md:max-w-[460px] lg:max-w-[542px]
                          mx-auto md:mx-0
                          mr-4 sm:mr-8 md:mr-10 lg:mr-[40px]
                          text-center md:text-left
